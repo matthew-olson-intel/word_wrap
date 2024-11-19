@@ -214,7 +214,7 @@ int absorb_first_word_of_next_line(yed_buffer *buff, yed_line *line, int row, in
         } else if(is_whitespace(git)) {
             preceding_whitespace = 1;
         }
-        first_word_visual_width += yed_get_glyph_width(*git);
+        first_word_visual_width += yed_get_glyph_width(git);
         first_word_width++;
         
         /* Bail out if we've already exceeded our limit */
@@ -314,7 +314,7 @@ int split_line(yed_buffer *buff, int row, int max_cols) {
         }
         
         prev_git = git;
-        col += yed_get_glyph_width(*git);
+        col += yed_get_glyph_width(git);
     }
     
     return 0;
